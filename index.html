@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5a67d8">
+  <title>Country Hunt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="top-bar">
+      <h1>Country <span>Hunt</span></h1>
+      <div class="stats" aria-label="Game statistics">
+        <div class="stat">
+          <small>Score</small>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <small>Found</small>
+          <strong><span id="completed">0</span>/<span id="total">0</span></strong>
+        </div>
+      </div>
+    </header>
+
+    <section id="welcome" class="welcome">
+      <div class="welcome-card">
+        <div class="globe" aria-hidden="true">🌍</div>
+        <p class="eyebrow">A world of words</p>
+        <h2>Ready for an adventure?</h2>
+        <p>Find all the hidden country names in the letter grid.</p>
+        <button id="start-button" class="primary-button" type="button">Start Game</button>
+      </div>
+    </section>
+
+    <section id="game" class="game-area" hidden>
+      <div class="puzzle-panel">
+        <div class="grid-heading">
+          <h2>Find the countries</h2>
+          <span>Drag across letters</span>
+        </div>
+        <div class="difficulty-row">
+          <label for="difficulty-select">Difficulty</label>
+          <select id="difficulty-select" aria-label="Choose difficulty">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <p class="game-instruction">Find words in any direction. Start from the first letter and drag to the last letter.</p>
+        <div id="letter-grid" class="letter-grid" aria-label="Country word search grid"></div>
+      </div>
+
+      <aside class="countries-panel">
+        <h2>Countries</h2>
+        <ul id="country-list" class="country-list"></ul>
+        <button id="restart-button" class="secondary-button" type="button">Restart Game</button>
+      </aside>
+    </section>
+
+    <div id="win-message" class="win-message" role="status" aria-live="polite" hidden>
+      <div class="confetti" aria-hidden="true">🎉</div>
+      <h2>Congratulations!</h2>
+      <p>You found every country!</p>
+      <button id="play-again-button" class="primary-button" type="button">Play Again</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
